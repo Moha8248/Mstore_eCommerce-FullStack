@@ -10,6 +10,7 @@ from rest_framework.permissions import IsAdminUser
 
 
 
+
 class SignUpView(CreateAPIView):
     serializer_class=UserSerializer
     queryset=User.objects.all()

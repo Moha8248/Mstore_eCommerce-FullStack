@@ -38,6 +38,17 @@ export class ProductDetailComponent implements OnInit {
     else{
       this.router.navigateByUrl('signin')
     }
+  }
+  addTowishlistFunction(id:any){
+    
+      let token=localStorage.getItem("token")
+      if(token){
+        this.service.addTowishlistService(id).then(res=>res.json()).then(data=>console.log(data))
+        setTimeout(window.location.href='wishlist',1000)
+      }
+      else{
+        this.router.navigateByUrl('signin')
+      }
     
   }
   placeorderFunction(id:any){
